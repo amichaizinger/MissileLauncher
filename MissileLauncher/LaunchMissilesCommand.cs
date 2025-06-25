@@ -7,8 +7,15 @@ using MenuBuilder;
 
 namespace MissileLauncher
 {
-    internal class LaunchMissilesCommand : IMenuCommand
+    public class LaunchMissilesCommand : IMenuCommand
     {
+        private readonly IMissileLauncher _missileLauncher;
+
+        public LaunchMissilesCommand(MissileLauncher missileLauncher)
+        {
+            _missileLauncher = missileLauncher;
+        }
+
         public void Execute()
         {
             Console.WriteLine("which wype of missile would you want to fire, if you want to go cowabunga write: \"TotalWar\"");
@@ -16,6 +23,7 @@ namespace MissileLauncher
             if (missileTypeInput.Equals("TotalWar", StringComparison.OrdinalIgnoreCase))
             {
                 Console.WriteLine("Cowabunga! Launching all missiles in a spectacular display of firepower!");
+
             }
             else
             {
@@ -30,8 +38,7 @@ namespace MissileLauncher
                     Console.WriteLine($"Launching {quantity} {missileTypeInput} missiles.");
                 }
             }
-            // Here you would add the logic to actually launch the missiles.
-            // This could involve checking the inventory, confirming the launch, etc.
+
         }
     }
 }

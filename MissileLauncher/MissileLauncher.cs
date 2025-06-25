@@ -17,5 +17,13 @@ namespace MissileLauncher
                 missileBattery.Add(missileType);
             }
         }
+        public void FireAllMissiles()
+        {
+
+        }
+        public void FireMissiles()
+        {
+
+        }
     }
 }
