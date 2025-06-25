@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MissileLauncher
+namespace MissileLauncher.Enums
 {
-    public enum MissileType 
+    public enum IMissile
     {
-            torpedo,
-            balistic,
-            cruise
+        torpedo,
+        balistic,
+        cruise
     }
 }

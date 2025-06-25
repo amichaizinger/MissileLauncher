@@ -3,18 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MissileLauncher.Enums;
+using MissileLauncher.Interfaces;
 
 namespace MissileLauncher
 {
     public class MissileLauncher : IMissileLauncher
     {
-        private List<MissileType> missileBattery = new List<MissileType>();
+        private List<IMissile> missiles = new List<IMissile>();
+        private Dictionary<string, IMissile> MissileTypes = new Dictionary<string, IMissile>();
 
-        public void AddMissiles(MissileType missileType, int quantity)
+        public void AddMissileType(string name, IMissile missile)
+        {
+            if (!MissileTypes.ContainsKey(name))
+            {
+                MissileTypes[name] = missile;
+            }
+        }
+        public void AddMissiles(Enums.IMissile missile, int quantity)
         {
             for (int i = 0; i < quantity; i++)
             {
-                missileBattery.Add(missileType);
+                missiles.Add(missile);
             }
         }
         public void FireAllMissiles()

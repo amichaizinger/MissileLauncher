@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MenuBuilder;
+using MissileLauncher.Enums;
 
-namespace MissileLauncher
+namespace MissileLauncher.MenuCommand
 {
     public class AddMissilesCommand : IMenuCommand
     {
@@ -14,14 +15,14 @@ namespace MissileLauncher
             Console.WriteLine("Which Missile would you want to add? the options are: Torpedo, Balistic, Cruise");
             string missileTypeInput = Console.ReadLine();
 
-            if (Enum.TryParse(missileTypeInput.ToLower(), true, out MissileType missileType))
+            if (Enum.TryParse(missileTypeInput.ToLower(), true, out Enums.IMissile missileType))
             {
                 Console.WriteLine("how many would you want to add?");
                 string quantityInput = Console.ReadLine();
                 if (int.TryParse(quantityInput, out int quantity) && quantity > 0)
                 {
                     Console.WriteLine($"Adding {quantity} {missileType} missiles to the inventory.");
-                    
+
 
                 }
                 else

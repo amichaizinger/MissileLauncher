@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace MissileLauncher
 {
-    public interface IMissileLauncher
+    internal interface IMissile
     {
-        public void AddMissiles(MissileType missileType, int quantity);
-
     }
 }
