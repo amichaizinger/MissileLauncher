@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MenuBuilder;
+using MissileLauncher.Interfaces;
 
-namespace MissileLauncher
+namespace MissileLauncher.MenuCommand
 {
     public class LaunchMissilesCommand : IMenuCommand
     {
-        private readonly IMissileLauncher _missileLauncher;
+        private readonly IMissileBattery _missileLauncher;
 
-        public LaunchMissilesCommand(MissileLauncher missileLauncher)
+        public LaunchMissilesCommand(MissileBattery missileLauncher)
         {
             _missileLauncher = missileLauncher;
         }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MissileLauncher.Interfaces;
 
-namespace MissileLauncher
+namespace MissileLauncher.LaunchTechnic
 {
-    public class BalisticLaunchTechnic : ILaunchTechnic //used for balistic missiles
+    public class ManualLaunch : ILaunchTechnic //used for balistic missiles
     {
         public double GetSuccessRate()
         {
