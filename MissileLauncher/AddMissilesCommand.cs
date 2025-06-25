@@ -14,14 +14,15 @@ namespace MissileLauncher
             Console.WriteLine("Which Missile would you want to add? the options are: Torpedo, Balistic, Cruise");
             string missileTypeInput = Console.ReadLine();
 
-            if (Enum.TryParse(missileTypeInput.ToLower(), true, out MissleType missileType))
+            if (Enum.TryParse(missileTypeInput.ToLower(), true, out MissileType missileType))
             {
                 Console.WriteLine("how many would you want to add?");
                 string quantityInput = Console.ReadLine();
                 if (int.TryParse(quantityInput, out int quantity) && quantity > 0)
                 {
                     Console.WriteLine($"Adding {quantity} {missileType} missiles to the inventory.");
-                    // Here you would add the logic to actually add the missiles to your inventory.
+                    
+
                 }
                 else
                 {
