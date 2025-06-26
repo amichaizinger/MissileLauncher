@@ -12,7 +12,7 @@ namespace MissileLauncher.MenuCommand
     {
         private readonly IMissileBattery _missileLauncher;
 
-        public LaunchMissilesCommand(MissileBattery missileLauncher)
+        public LaunchMissilesCommand(IMissileBattery missileLauncher)
         {
             _missileLauncher = missileLauncher;
         }

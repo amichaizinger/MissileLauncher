@@ -11,9 +11,9 @@ namespace MissileLauncher.MenuCommand
     public class AddMissilesCommand : IMenuCommand
     {
         private readonly IMissileBattery _missileLauncher;
-        public AddMissilesCommand(IMissileBattery missileLauncher)
+        public AddMissilesCommand(IMissileBattery missileBattery)
         {
-            _missileLauncher = missileLauncher ?? throw new ArgumentNullException(nameof(missileLauncher));
+            _missileLauncher = missileBattery ?? throw new ArgumentNullException(nameof(missileBattery));
         }
         public void Execute()
         {
