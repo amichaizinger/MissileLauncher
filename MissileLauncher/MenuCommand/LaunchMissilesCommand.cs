@@ -26,7 +26,7 @@ namespace MissileLauncher.MenuCommand
             if (missileTypeInput.Equals("TotalWar", StringComparison.OrdinalIgnoreCase))
             {
                 Console.WriteLine("Cowabunga! Launching all missiles in a spectacular display of firepower!");
-                foreach (var missile in _missileBattery.missiles)
+                foreach (var missile in _missileBattery.missiles.ToList()) // running on a replia because you cant remove while on a list
                 {
                     if (missile.IsActive)
                     {
