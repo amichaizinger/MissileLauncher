@@ -10,31 +10,31 @@ namespace MissileLauncher.MenuCommand
 {
     public class AddMissilesCommand : IMenuCommand
     {
-        private readonly IMissileBattery _missileLauncher;
+        private readonly IMissileBattery _missileBattery;
         public AddMissilesCommand(IMissileBattery missileBattery)
         {
-            _missileLauncher = missileBattery ?? throw new ArgumentNullException(nameof(missileBattery));
+            _missileBattery = missileBattery ?? throw new ArgumentNullException(nameof(missileBattery));
         }
         public void Execute()
         {
             Console.WriteLine("Which Missile would you want to add? the options are: ");
-            foreach (var type in _missileLauncher.MissileTypes.Keys)
+            foreach (var type in _missileBattery.MissileTypes.Keys)
             {
                 Console.WriteLine($"- {type}");
             }
 
             string missileTypeInput = Console.ReadLine();
 
-            if (_missileLauncher.MissileTypes.ContainsKey(missileTypeInput))
+            if (_missileBattery.MissileTypes.ContainsKey(missileTypeInput))
             {
                 Console.WriteLine("how many would you want to add?");
                 string quantityInput = Console.ReadLine();
                 if (int.TryParse(quantityInput, out int quantity) && quantity > 0)
                 {
-                    IMissile missile = _missileLauncher.MissileTypes[missileTypeInput].GetMissile();
+                    IMissile missile = _missileBattery.MissileTypes[missileTypeInput].GetMissile();
 
                     Console.WriteLine($"Adding {quantity} {missileTypeInput} missiles to the inventory.");
-                    _missileLauncher.AddMissiles(missile, quantity);
+                    _missileBattery.AddMissiles(missile, quantity);
                 }
                 else
                 {

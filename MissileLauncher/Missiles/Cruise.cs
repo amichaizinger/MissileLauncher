@@ -9,23 +9,21 @@ namespace MissileLauncher.Missiles
 {
     public class Cruise : IMissile
     {
+        public string Name { get; private set; }
+
         public ILaunchTechnic LaunchTechnic { get; private set; }
 
-        public bool IsActive { get; private set; } = true;
+        public bool IsActive { get; set; } = true;
 
-        public Cruise(ILaunchTechnic launchTechnic)
+        public Cruise(ILaunchTechnic launchTechnic,string name)
         {
             LaunchTechnic = launchTechnic;
+            Name = name;
         }
 
         public IMissile GetMissile()
         {
-            return new Cruise(LaunchTechnic);
-        }
-
-        public double GetSuccessRate()
-        {
-            return LaunchTechnic.GetSuccessRate();
+            return new Cruise(LaunchTechnic, Name);
         }
     }
 }

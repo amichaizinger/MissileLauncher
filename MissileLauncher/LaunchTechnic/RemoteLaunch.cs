@@ -9,9 +9,20 @@ namespace MissileLauncher.LaunchTechnic
 {
     internal class RemoteLaunch : ILaunchTechnic //used for cruise missiles
     {
-        public double GetSuccessRate()
+        public bool Launch()
         {
-            return 0.2;
+            //20% success rate
+            Random random = new Random();
+            int number = random.Next(10) + 1;
+            if (number < 3)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 

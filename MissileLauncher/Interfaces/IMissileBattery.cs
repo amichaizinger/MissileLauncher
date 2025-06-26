@@ -13,8 +13,6 @@ namespace MissileLauncher.Interfaces
 
         public void AddMissileType(string name, IMissile missile);
         public void AddMissiles(IMissile missile, int quantity);
-        public void LaunchAllMissiles();
-        public void LaunchMissiles();
 
     }
 }

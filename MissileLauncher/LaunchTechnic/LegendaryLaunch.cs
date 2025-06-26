@@ -9,9 +9,10 @@ namespace MissileLauncher.LaunchTechnic
 {
     public class LegendaryLaunch : ILaunchTechnic //used for Torpedo missiles
     {
-        public double GetSuccessRate()
+        public bool Launch()
         {
-            return 1;
+            //100% success
+            return true;
         }
     }
 }

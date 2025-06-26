@@ -15,9 +15,13 @@ ILaunchTechnic manuallaunchTechnic = new ManualLaunch();
 ILaunchTechnic legendaryLaunchTechnic = new LegendaryLaunch();
 ILaunchTechnic remoteLaunchTechnic = new RemoteLaunch();
 
-missileBattery.AddMissileType("Torpedo", new Torpedo(legendaryLaunchTechnic));
-missileBattery.AddMissileType("Balistic", new Balistic(manuallaunchTechnic));
-missileBattery.AddMissileType("Cruise", new Cruise(remoteLaunchTechnic));
+IMissile torpedo = new Torpedo(legendaryLaunchTechnic, "Torpedo");
+IMissile balistic = new Balistic(manuallaunchTechnic, "Balistic");
+IMissile cruise = new Cruise(remoteLaunchTechnic, "Cruise");
+
+missileBattery.AddMissileType(torpedo.Name, torpedo);
+missileBattery.AddMissileType(balistic.Name, balistic);
+missileBattery.AddMissileType(cruise.Name, cruise );
 
 
 mainMenu.Commands.Add("Store new missile/s", new AddMissilesCommand(missileBattery));

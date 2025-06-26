@@ -27,10 +27,7 @@ namespace MissileLauncher
                 missiles.Add(missile);
             }
         }
-        public void LaunchAllMissiles()
-        {
 
-        }
         public void LaunchMissiles()
         {
 

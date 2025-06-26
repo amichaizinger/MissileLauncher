@@ -9,23 +9,22 @@ namespace MissileLauncher.Missiles
 {
     public class Torpedo : IMissile
     {
+        public string Name {  get; private set; }
         public ILaunchTechnic LaunchTechnic { get; private set; }
 
-        public bool IsActive { get; private set; } = true;
+        public bool IsActive { get; set; } = true;
 
-        public Torpedo(ILaunchTechnic launchTechnic)
+       
+
+        public Torpedo(ILaunchTechnic launchTechnic, string name)
         {
             LaunchTechnic = launchTechnic;
+            Name = name;
         }
 
         public IMissile GetMissile()
         {
-            return new Torpedo(LaunchTechnic);
-        }
-
-        public double GetSuccessRate()
-        {
-            return LaunchTechnic.GetSuccessRate();
+            return new Torpedo(LaunchTechnic, Name);
         }
     }
 }

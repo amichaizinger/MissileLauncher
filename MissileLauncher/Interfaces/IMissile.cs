@@ -9,13 +9,9 @@ namespace MissileLauncher
 {
     public interface IMissile
     {
+        public string Name { get; }
         ILaunchTechnic LaunchTechnic { get; }
-        bool IsActive { get; }
+        bool IsActive { get; set; }
         public IMissile GetMissile();
-        public double GetSuccessRate()
-        {
-            return LaunchTechnic.GetSuccessRate();
-
-        }
     }
 }

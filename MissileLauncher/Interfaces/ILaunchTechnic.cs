@@ -8,6 +8,6 @@ namespace MissileLauncher.Interfaces
 {
     public interface ILaunchTechnic
     {
-        public double GetSuccessRate();
+        public bool Launch();
     }
 }
