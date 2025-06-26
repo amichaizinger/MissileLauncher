@@ -8,7 +8,7 @@ using MissileLauncher.Interfaces;
 
 namespace MissileLauncher.MenuCommand
 {
-    internal class MissileDisposalCommand : IMenuCommand
+    public class MissileDisposalCommand : IMenuCommand
     {
         private IMissileBattery _missileBattery;
 
@@ -18,8 +18,22 @@ namespace MissileLauncher.MenuCommand
         }
         public void Execute()
         {
-            Console.WriteLine($"enter the place of the missile you want to dispose of from 0 to {_missileBattery.missiles.}");
-            string input = Console.ReadLine();
+            if(_missileBattery.missiles.Count == 0)
+            {
+                Console.WriteLine("There are no missiles to dispose of.");
+                return;
+            }
+            Console.WriteLine($"enter the place of the missile you want to dispose of from 0 to {_missileBattery.missiles.Count}");
+            string indexInput = Console.ReadLine();
+            if( !int.TryParse(indexInput, out int index) || index > _missileBattery.missiles.Count)
+            {
+                Console.WriteLine("Invalid index. Please enter a valid index.");
+            }
+            else
+            {
+                _missileBattery.missiles.RemoveAt(index);
+            }
+            
 
         }
     }

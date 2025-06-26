@@ -8,10 +8,10 @@ using MissileLauncher.Interfaces;
 
 namespace MissileLauncher.MenuCommand
 {
-    public class AddMissilesCommand : IMenuCommand
+    public class MissileAdderCommand : IMenuCommand
     {
         private readonly IMissileBattery _missileBattery;
-        public AddMissilesCommand(IMissileBattery missileBattery)
+        public MissileAdderCommand(IMissileBattery missileBattery)
         {
             _missileBattery = missileBattery ?? throw new ArgumentNullException(nameof(missileBattery));
         }

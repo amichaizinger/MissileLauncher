@@ -8,10 +8,10 @@ using MissileLauncher.Interfaces;
 
 namespace MissileLauncher.MenuCommand
 {
-    public class PrintInventoryCommand : IMenuCommand
+    public class InventoryPrinterCommand : IMenuCommand
     {
         private IMissileBattery _missileBattery;
-        public PrintInventoryCommand(IMissileBattery missileBattery)
+        public InventoryPrinterCommand(IMissileBattery missileBattery)
         {
             _missileBattery = missileBattery;
         }

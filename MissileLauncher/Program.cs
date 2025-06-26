@@ -24,10 +24,11 @@ missileBattery.AddMissileType(balistic.Name, balistic);
 missileBattery.AddMissileType(cruise.Name, cruise );
 
 
-mainMenu.Commands.Add("Store new missile/s", new AddMissilesCommand(missileBattery));
-mainMenu.Commands.Add("Launch Missiles", new LaunchMissilesCommand(missileBattery));
-mainMenu.Commands.Add("Inventory report", new DefaultCommand());
-mainMenu.Commands.Add("Clean out missiles", new DefaultCommand());
+mainMenu.Commands.Add("Store new missile/s", new MissileAdderCommand(missileBattery));
+mainMenu.Commands.Add("Launch Missiles", new LaunchMissilesCommand
+    (missileBattery));
+mainMenu.Commands.Add("Inventory report", new InventoryPrinterCommand(missileBattery));
+mainMenu.Commands.Add("Clean out missiles", new MissileDisposalCommand(missileBattery));
 
 
 mainMenu.showMenu();
