@@ -23,9 +23,9 @@ namespace MissileLauncher.MenuCommand
                 Console.WriteLine("There are no missiles to dispose of.");
                 return;
             }
-            Console.WriteLine($"enter the place of the missile you want to dispose of from 0 to {_missileBattery.missiles.Count}");
+            Console.WriteLine($"enter the place of the missile you want to dispose of from 0 to {_missileBattery.missiles.Count-1}");
             string indexInput = Console.ReadLine();
-            if( !int.TryParse(indexInput, out int index) || index > _missileBattery.missiles.Count)
+            if( !int.TryParse(indexInput, out int index) || index > _missileBattery.missiles.Count-1)
             {
                 Console.WriteLine("Invalid index. Please enter a valid index.");
             }
