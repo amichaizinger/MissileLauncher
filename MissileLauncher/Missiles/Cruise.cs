@@ -15,7 +15,7 @@ namespace MissileLauncher.Missiles
 
         public bool IsActive { get; set; } = true;
 
-        public Cruise(ILaunchTechnic launchTechnic,string name)
+        public Cruise(ILaunchTechnic launchTechnic, string name)
         {
             LaunchTechnic = launchTechnic;
             Name = name;

@@ -9,12 +9,12 @@ namespace MissileLauncher.Missiles
 {
     public class Torpedo : IMissile
     {
-        public string Name {  get; private set; }
+        public string Name { get; private set; }
         public ILaunchTechnic LaunchTechnic { get; private set; }
 
         public bool IsActive { get; set; } = true;
 
-       
+
 
         public Torpedo(ILaunchTechnic launchTechnic, string name)
         {
